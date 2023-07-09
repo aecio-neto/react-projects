@@ -9,19 +9,24 @@ function Square({ value, onSquareClick }) {
   )
 }
 
-/* Notas 
-Ao utilizar a sintaxe [value, setValue], estamos desestruturando o array retornado pelo useState. Isso significa que estamos atribuindo o primeiro elemento do array (o valor atual do estado) à variável value, e o segundo elemento (a função para atualizar o estado) à variável setValue.
-
-Dessa forma, podemos acessar e atualizar o estado value dentro do componente Square. Quando o botão é clicado (no evento onClick), a função handleClick é chamada, que por sua vez chama setValue para atualizar o valor do estado value para 'x'.
-*/
-
 export default function Board() {
+  const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
 
   function handleClick(i) {
+    if (squares[i]) {
+      return
+    }
+    
     const nextSquares = squares.slice()
-    nextSquares[i] = 'x'
+    
+    if (xIsNext) {
+      nextSquares[i] = "X";
+    } else {
+      nextSquares[i] = "O";
+    }
     setSquares(nextSquares)
+    setXIsNext(!xIsNext)
   }
 
   return (
@@ -44,3 +49,9 @@ export default function Board() {
     </div>
   )
 }
+
+/* Notas 
+Ao utilizar a sintaxe [value, setValue], estamos desestruturando o array retornado pelo useState. Isso significa que estamos atribuindo o primeiro elemento do array (o valor atual do estado) à variável value, e o segundo elemento (a função para atualizar o estado) à variável setValue.
+
+Dessa forma, podemos acessar e atualizar o estado value dentro do componente Square. Quando o botão é clicado (no evento onClick), a função handleClick é chamada, que por sua vez chama setValue para atualizar o valor do estado value para 'x'.
+*/
