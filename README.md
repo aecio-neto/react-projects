@@ -1,5 +1,5 @@
 # React Projects
-Este repositório contém uma coleção de pequenos projetos em React criados com o objetivo de ajudar no entendimento e prática dos fundamentos dessa poderosa biblioteca JavaScript.
+Este repositório contém uma coleção de pequenos projetos em React criados com o objetivo de me ajudar no entendimento e prática dos fundamentos dessa biblioteca JavaScript.
 
 Cada projeto neste repositório é um exemplo independente, focado em explorar um aspecto específico do React e demonstrar seu uso de forma clara e concisa. O objetivo é criar um espaço para aprimorar minhas habilidades em React, desde os conceitos básicos até técnicas mais avançadas.
 
