@@ -1,14 +1,6 @@
 import React from "react"
 import { useState } from "react"
 
-// Pensando em React
-// Square é um componente
-// onSquareClick é um parâmetro, que irá receber uma função como argumento dentro da board.
-// essa função (handleClick) gerencia as mudanças de estado: null, 'x' e 'o'. 
-// value é um parâmetro que irá receber um argumento que determina um estado visual. 
-// ainda está um pouco confuso, mas aos poucos estou entendendo.
-
-
 /* Melhorias para implantar no jogo
 If you have extra time or want to practice your new React skills, here are some ideas for improvements that you could make to the tic-tac-toe game, listed in order of increasing difficulty:
 
@@ -17,6 +9,7 @@ Rewrite Board to use two loops to make the squares instead of hardcoding them.
 Add a toggle button that lets you sort the moves in either ascending or descending order.
 When someone wins, highlight the three squares that caused the win (and when no one wins, display a message about the result being a draw).
 Display the location for each move in the format (row, col) in the move history list.
+
  */
 
 
@@ -141,26 +134,3 @@ function calculateWinner(squares) {
   }
   return null;
 }
-
-/* Notas 
-Ao utilizar a sintaxe [value, setValue], estamos desestruturando o array retornado pelo useState. Isso significa que estamos atribuindo o primeiro elemento do array (o valor atual do estado) à variável value, e o segundo elemento (a função para atualizar o estado) à variável setValue.
-
-Dessa forma, podemos acessar e atualizar o estado value dentro do componente Square. Quando o botão é clicado (no evento onClick), a função handleClick é chamada, que por sua vez chama setValue para atualizar o valor do estado value para 'x'.
-
-STATE AND PROPS
-Props são propriedades. Elas são passadas de cima pra baixo. E "não podem" ser modificadas. 
-Para modificar as props, usamos state. 
-
-
-KEYS 
-É importante utilizar keys em componentes do tipo listas, essa chave é o que permite ao react re-renderizar os componentes e manter a organização entre eles. 
-
-Se já há uma key definida, o React descarta o componente que está sendo criado (pois já existe um "igual".)
-
-Keys informam ao React a identidade de cada componente, o que permite ao React manter o state/condição do componente entre as renderizações. Se a key muda, o componente será destruído e recriado com um novo state/condição.
-
-key is a special and reserved property in React. When an element is created, React extracts the key property and stores the key directly on the returned element. Even though key may look like it is passed as props, React automatically uses key to decide which components to update. There’s no way for a component to ask what key its parent specified.
-
-It’s strongly recommended that you assign proper keys whenever you build dynamic lists. If you don’t have an appropriate key, you may want to consider restructuring your data so that you do.
-
-*/
